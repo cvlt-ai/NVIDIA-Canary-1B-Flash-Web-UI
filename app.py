@@ -466,9 +466,9 @@ def update_target_language_visibility(asr_ast_mode: str):
         return gr.update(visible=True)
 
 def create_interface():
-    """Create the Gradio interface."""
+       """Create the Gradio interface."""
     
-    # Custom CSS for better styling
+    # Custom CSS for better styling and proper dark/light mode support
     css = """
     .gradio-container {
         max-width: 1200px !important;
@@ -490,6 +490,69 @@ def create_interface():
         padding: 10px;
         margin: 10px 0;
         font-family: monospace;
+    }
+    
+    /* Light mode - default Gradio styling */
+    .light textarea,
+    .light input[type="text"],
+    body:not(.dark) textarea,
+    body:not(.dark) input[type="text"] {
+        background-color: #ffffff !important;
+        color: #000000 !important;
+        border-color: #d1d5db !important;
+    }
+    
+    .light .feature-box,
+    body:not(.dark) .feature-box {
+        background-color: #f9f9f9;
+        border-color: #e0e0e0;
+        color: #000000;
+    }
+    
+    /* Dark mode - only apply when dark class is present */
+    .dark textarea,
+    .dark input[type="text"],
+    .dark .gr-textbox textarea,
+    .dark .gr-textbox input,
+    .dark .gr-form textarea,
+    .dark .gr-form input {
+        background-color: #374151 !important;
+        color: #f9fafb !important;
+        border-color: #6b7280 !important;
+    }
+    
+    .dark .feature-box {
+        background-color: #1f2937 !important;
+        border-color: #374151 !important;
+        color: #f9fafb !important;
+    }
+    
+    /* Dark mode placeholder text */
+    .dark textarea::placeholder,
+    .dark input[type="text"]::placeholder,
+    .dark .gr-textbox textarea::placeholder,
+    .dark .gr-textbox input::placeholder {
+        color: #9ca3af !important;
+    }
+    
+    /* Light mode placeholder text */
+    .light textarea::placeholder,
+    .light input[type="text"]::placeholder,
+    body:not(.dark) textarea::placeholder,
+    body:not(.dark) input[type="text"]::placeholder {
+        color: #6b7280 !important;
+    }
+    
+    /* Ensure proper contrast in both modes */
+    .dark .gr-button {
+        background-color: #4f46e5 !important;
+        color: #ffffff !important;
+    }
+    
+    .light .gr-button,
+    body:not(.dark) .gr-button {
+        background-color: #4f46e5 !important;
+        color: #ffffff !important;
     }
     """
     
