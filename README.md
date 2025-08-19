@@ -184,3 +184,4 @@ This application is provided under the same license as the underlying NVIDIA Can
 - **Gradio Team**: For the excellent web interface framework
 - **HuggingFace**: For model hosting and distribution
 
+![GitHub Repo stars](https://img.shields.io/github/stars/cvlt-ai/NVIDIA-Canary-1B-Flash-Web-UI?style=social)
