@@ -23,8 +23,8 @@ This guide provides step-by-step instructions for installing and running the NVI
 #### For Linux/macOS:
 ```bash
 # 1. Clone or download the application
-git clone <repository-url>
-cd canary_gradio_app
+git clone https://github.com/cvlt-ai/NVIDIA-Canary-1B-Flash-Web-UI
+cd NVIDIA-Canary-1B-Flash-Web-UI
 
 # 2. Run the setup script
 ./run.sh --setup
